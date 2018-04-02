@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-widget-preview',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetPreviewComponent implements OnInit {
 
+    @Input()
+    username: string;
+
   constructor() { }
 
   ngOnInit() {
+      const widget = new GitHubCard({
+          template: '#github-card-demo',
+          username: this.username
+      });
+      widget.init();
   }
 
 }
