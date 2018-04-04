@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormConfigComponent implements OnInit {
 
+    model: Partial<ConfigurationModel> = {
+        username: 'piotrl',
+        template: '#github-profile-demo'
+    };
+
   constructor() { }
 
   ngOnInit() {
