@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WizardComponent implements OnInit {
 
+    initialModel: Partial<ConfigurationModel> = {
+      username: 'piotrl',
+      template: '#github-profile-demo'
+  };
+
+  model: Partial<ConfigurationModel>;
+
   constructor() { }
 
   ngOnInit() {
+      this.onModelUpdate(this.initialModel);
+  }
+
+  onModelUpdate(model: Partial<ConfigurationModel>) {
+    this.model = {...this.model, ...model};
   }
 
 }

@@ -1,12 +1,12 @@
 <div>
     <!-- Load your own profile -->
     <div class="config-section-left">
-        <app-form-config></app-form-config>
+        <app-form-config [model]="initialModel" (modelChange)="onModelUpdate($event)"></app-form-config>
     </div>
 
     <div class="content-section">
         <app-widget-preview
-                [username]="'piotrl'">
+                [username]="model.username">
         </app-widget-preview>
     </div>
 </div>

@@ -4,7 +4,8 @@
         <input type="text" placeholder="GitHub username" id="gh-uname"
                name="username"
                [(ngModel)]="model.username" />
-        <input type="submit" id="gh-uname-submit" value="send"/>
+        <input type="submit" id="gh-uname-submit" value="send"
+        (click)="onModelSave()"/>
     </div>
 
     <div class="tooltip choose-repos-num">

@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-form-config',
   templateUrl: './form-config.component.html',
   styleUrls: ['./form-config.component.css']
 })
-export class FormConfigComponent implements OnInit {
+export class FormConfigComponent {
 
-    model: Partial<ConfigurationModel> = {
-        username: 'piotrl',
-        template: '#github-profile-demo'
-    };
+    @Input()
+    model: Partial<ConfigurationModel>;
 
-  constructor() { }
+    @Output()
+    modelChange: EventEmitter<Partial<ConfigurationModel>> = new EventEmitter();
 
-  ngOnInit() {
-  }
+      onModelSave() {
+          this.modelChange.emit({...this.model});
+      }
 
 }
